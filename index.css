@@ -6,6 +6,7 @@ body {
   height: 100vh;
   background-color: #f4f4f4;
   margin: 0;
+  padding: 10px; /* Added padding for smaller screens */
 }
 
 form {
@@ -13,7 +14,8 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 800px;
+  width: 100%;
+  max-width: 800px; /* Set max-width for larger screens */
 }
 
 div {
@@ -49,4 +51,15 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  form {
+    padding: 10px; /* Reduce padding for smaller screens */
+  }
+
+  button {
+    padding: 8px 16px; /* Reduce button padding for smaller screens */
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
 }
