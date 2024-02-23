@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <form action="/submit-quiz" method="post">
+    <form onsubmit="handleSubmit(event)">
         <div>
             <label>Question 1:</label><br>
             <input type="radio" id="q1o1" name="question1" value="1"><label for="q1o1">1</label><br>
@@ -32,6 +32,6 @@
         </div>
         <button type="submit">Submit</button>
     </form>
-     <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
