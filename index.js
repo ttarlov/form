@@ -1,19 +1,14 @@
-window.addEventListener('load', function() {
-    var iframe = document.getElementById('myIframe');
-    var contentWindow = iframe.contentWindow;
+function resizeIframe(iframe) {
+    try {
+        var body = iframe.contentWindow.document.body,
+            html = iframe.contentWindow.document.documentElement;
 
-    iframe.onload = function() {
-        var body = contentWindow.document.body;
-        var html = contentWindow.document.documentElement;
-
-        var height = Math.max(
-            body.scrollHeight, body.offsetHeight,
-            html.clientHeight, html.scrollHeight, html.offsetHeight
-        );
-
+        var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
         iframe.style.height = height + 'px';
-    };
-});
+    } catch (e) {
+        console.error("Error resizing iframe:", e);
+    }
+}
 
 
 function handleSubmit(event) {
