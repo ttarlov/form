@@ -1,3 +1,21 @@
+window.addEventListener('load', function() {
+    var iframe = document.getElementById('myIframe');
+    var contentWindow = iframe.contentWindow;
+
+    iframe.onload = function() {
+        var body = contentWindow.document.body;
+        var html = contentWindow.document.documentElement;
+
+        var height = Math.max(
+            body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight
+        );
+
+        iframe.style.height = height + 'px';
+    };
+});
+
+
 function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -22,3 +40,4 @@ function handleSubmit(event) {
         location.reload(); // Reload the page to reset the form
     });
 }
+
