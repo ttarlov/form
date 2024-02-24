@@ -1,11 +1,22 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
   background-color: #f4f4f4;
-  margin: 0;
+  overflow-y: auto; /* Make the body scrollable */
+}
+
+.form-container {
+  padding: 20px 0; /* Add padding to the top and bottom */
+  width: 100%;
+  max-width: 800px; /* Set a max width for the form */
+  box-sizing: border-box; /* Include padding in the width calculation */
 }
 
 form {
@@ -13,7 +24,7 @@ form {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 800px;
+  width: 100%;
 }
 
 div {
@@ -49,4 +60,17 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.result-block {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+
+.resetButton {
+  margin-top: 20px;
 }
